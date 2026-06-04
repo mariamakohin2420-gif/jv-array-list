@@ -98,11 +98,11 @@ public class ArrayList<T> implements List<T> {
             for (int i = 0; i < size; i++) {
                 if (elementData[i] == null) {
                     return i;
-        }
+                }
             }
-                } else {
-                    for (int i = 0; i < size; i++) {
-                    if (element.equals(elementData[i])) {
+        } else {
+            for (int i = 0; i < size; i++) {
+                if (element.equals(elementData[i])) {
                         return i;
                 }
             }
@@ -110,6 +110,7 @@ public class ArrayList<T> implements List<T> {
 
         return -1;
     }
+
     private void ensureCapacity() {
         if (size == elementData.length) {
             int oldCapacity = elementData.length;
