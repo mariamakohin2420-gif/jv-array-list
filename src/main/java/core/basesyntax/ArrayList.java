@@ -103,7 +103,7 @@ public class ArrayList<T> implements List<T> {
         } else {
             for (int i = 0; i < size; i++) {
                 if (element.equals(elementData[i])) {
-                        return i;
+                    return i;
                 }
             }
         }
