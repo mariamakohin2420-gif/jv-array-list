@@ -12,6 +12,7 @@ public class ArrayList<T> implements List<T> {
         this.size = 0;
 
     }
+
     @Override
     public void add(T value) {
         ensureCapacity();
@@ -91,20 +92,22 @@ public class ArrayList<T> implements List<T> {
 
         return this.size == 0;
     }
+
     private int findIndex(T element) {
         if (element == null) {
             for (int i = 0; i < size; i++) {
                 if (elementData[i] == null) {
                     return i;
-                }
+        }
             }
-            } else {
-                for (int i = 0; i < size; i++) {
+                } else {
+                    for (int i = 0; i < size; i++) {
                     if (element.equals(elementData[i])) {
                         return i;
                 }
             }
         }
+
         return -1;
     }
     private void ensureCapacity() {
@@ -116,17 +119,22 @@ public class ArrayList<T> implements List<T> {
             }
             Object[] newArray = new Object[newCapacity];
             System.arraycopy(elementData, 0, newArray, 0, size);
+
             elementData = newArray;
         }
     }
+
     private void checkIndex(int index) {
         if (index < 0 || index >= size) {
-            throw new ArrayListIndexOutOfBoundsException("Invalid index: " + index + ", Size: " + size);
+            throw new ArrayListIndexOutOfBoundsException("Invalid index: " + index
+                    + ", Size: " + size);
         }
     }
+
     private void checkIndexForAdd(int index) {
         if (index < 0 || index > size) {
-            throw new ArrayListIndexOutOfBoundsException("Invalid index for add: " + index + ", Size: " + size);
+            throw new ArrayListIndexOutOfBoundsException("Invalid index for add: " + index
+                    + ", Size: " + size);
         }
     }
 }
